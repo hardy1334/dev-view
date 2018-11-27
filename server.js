@@ -4,8 +4,13 @@ const app = express();
 const posts = require("./routes/api/posts");
 const profile = require("./routes/api/profile");
 const users = require("./routes/api/users");
+const bodyParser = require("body-parser");
+const passport = require("passport");
 
 const db = require("./config/keys").mongoURI;
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 mongoose
   .connect(db)
@@ -14,9 +19,9 @@ mongoose
   })
   .catch(err => console.log(err));
 
-app.get("/", (req, res) => {
-  res.send("fuck!!");
-});
+app.use(passport.initialize());
+
+require("./config/passport")(passport);
 
 app.use("/api/users", users);
 app.use("/api/profile", profile);
