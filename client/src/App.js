@@ -8,6 +8,7 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 
 import "./App.css";
 
+import EditProfile from "./components/edit-profile/EditProfile";
 import CreateProfile from "./components/create-profile/CreateProfile";
 import PrivateRoute from "./components/common/PrivateRoute";
 import Navbar from "../src/components/layout/Navbar";
@@ -50,6 +51,13 @@ class App extends Component {
                   exact
                   path="/create-profile"
                   component={CreateProfile}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/edit-profile"
+                  component={EditProfile}
                 />
               </Switch>
             </div>
