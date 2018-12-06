@@ -8,6 +8,7 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 
 import "./App.css";
 
+import Profiles from "./components/profiles/Profiles";
 import AddEducation from "./components/add-credentials/AddEducation";
 import AddExperience from "./components/add-credentials/AddExperience";
 import EditProfile from "./components/edit-profile/EditProfile";
@@ -45,6 +46,7 @@ class App extends Component {
             <div className="container">
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/profiles" component={Profiles} />
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
               </Switch>
