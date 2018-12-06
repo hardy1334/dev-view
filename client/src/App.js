@@ -8,6 +8,7 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 
 import "./App.css";
 
+import AddEducation from "./components/add-credentials/AddEducation";
 import AddExperience from "./components/add-credentials/AddExperience";
 import EditProfile from "./components/edit-profile/EditProfile";
 import CreateProfile from "./components/create-profile/CreateProfile";
@@ -66,6 +67,13 @@ class App extends Component {
                   exact
                   path="/add-experience"
                   component={AddExperience}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/add-education"
+                  component={AddEducation}
                 />
               </Switch>
             </div>
