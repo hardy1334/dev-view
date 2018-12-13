@@ -2,11 +2,11 @@ import axios from "axios";
 
 import {
   GET_PROFILE,
+  GET_PROFILES,
   CLEAR_CURRENT_PROFILE,
   PROFILE_LOADING,
   GET_ERRORS,
-  SET_CURRENT_USER,
-  GET_PROFILES
+  SET_CURRENT_USER
 } from "./types";
 
 export const getCurrentProfile = () => dispatch => {
@@ -23,6 +23,24 @@ export const getCurrentProfile = () => dispatch => {
       dispatch({
         type: GET_PROFILE,
         payload: {}
+      })
+    );
+};
+
+export const getProfileByHandle = handle => dispatch => {
+  dispatch(setProfileLoading());
+  axios
+    .get(`/api/profile/handle/${handle}`)
+    .then(res =>
+      dispatch({
+        type: GET_PROFILE,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_PROFILE,
+        payload: null
       })
     );
 };
