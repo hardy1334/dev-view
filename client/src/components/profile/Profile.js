@@ -21,6 +21,12 @@ class Profile extends React.Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.profile.profile === null && this.props.profile.loading) {
+      this.props.history.push("/not-found");
+    }
+  }
+
   render() {
     const { profile, loading } = this.props.profile;
     let profileContent;
@@ -44,14 +50,16 @@ class Profile extends React.Component {
             education={profile.education}
             experience={profile.experience}
           />
-          <ProfileGithub />
+          {profile.githubusername ? (
+            <ProfileGithub username={profile.githubusername} />
+          ) : null}
         </div>
       );
     }
 
     return (
       <div className="profile">
-        <div clas sName="container">
+        <div className="container">
           <div className="row">
             <div className="col-md-12">{profileContent}</div>
           </div>

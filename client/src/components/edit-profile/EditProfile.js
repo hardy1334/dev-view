@@ -185,9 +185,9 @@ class CreateProfile extends Component {
               <Link to="/dashboard" className="btn btn-light">
                 Go Back
               </Link>
-              <h1 class="display-4 text-center">Edit Your Profile</h1>
+              <h1 className="display-4 text-center">Edit Your Profile</h1>
 
-              <small class="d-block pb-3">* = required field</small>
+              <small className="d-block pb-3">* = required field</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="* Profile Handle"

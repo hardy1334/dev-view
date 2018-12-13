@@ -8,6 +8,7 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 
 import "./App.css";
 
+import NotFound from "./components/not-found/NotFound";
 import Profile from "./components/profile/Profile";
 import Profiles from "./components/profiles/Profiles";
 import AddEducation from "./components/add-credentials/AddEducation";
@@ -80,6 +81,7 @@ class App extends Component {
                   component={AddEducation}
                 />
               </Switch>
+              <Route exact path="/not-found" component={NotFound} />
             </div>
             <Footer />
           </div>
