@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+
 import Moment from "react-moment";
 
 class ProfileCreds extends React.Component {
