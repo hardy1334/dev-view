@@ -23,4 +23,6 @@ Initially after having a copy of repo in your system,-
 4. Now, again run **npm install**
 
 As now ,both the dependencies for React js as front-end and Express js as back-end
-Now Start the server by **npm run dev**
+Now Start the server by
+
+**npm run dev**
