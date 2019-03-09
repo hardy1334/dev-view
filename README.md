@@ -27,4 +27,4 @@ Initially after having a copy of repo in your system,-
 As now ,both the dependencies for React js as front-end and Express js as back-end
 Now Start the server by
 
-**npm run dev**
+5. **npm run dev**
